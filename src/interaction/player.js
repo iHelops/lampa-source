@@ -754,7 +754,7 @@ function start(data, need, inner){
             })
         })
     } 
-    else if(Platform.is('android') && (Storage.field(player_need) == 'android' || launch_player == 'android' || data.torrent_hash)){
+    else if(Platform.is('android') && (Storage.field(player_need) == 'android' || launch_player == 'android')){
         data.url = data.url.replace('&preload','&play')
 
         if(data.playlist && Array.isArray(data.playlist)){
