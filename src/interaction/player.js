@@ -742,6 +742,9 @@ function start(data, need, inner){
         else if (Storage.field(player_need) == 'tvosSelect') window.location.assign('lampa://video?player=lists&src=' + encodeURIComponent(data.url) + '&playlist=' + encodeURIComponent(JSON.stringify(data.playlist)))
             else inner()
     }
+    else if(Platform.is('browser') && Storage.field(player_need) == 'vlc'){
+        window.open('vlc://' + data.url)
+    }
     else if(Platform.is('webos') && (Storage.field(player_need) == 'webos' || launch_player == 'webos')){
         data.url = data.url.replace('&preload','&play')
 
