@@ -149,11 +149,6 @@ function jackett(params = {}, oncomplite, onerror){
             return a.name
         })
 
-        if(!params.clarification){
-            u = Utils.addUrlComponent(u,'title='+encodeURIComponent(params.movie.title))
-            u = Utils.addUrlComponent(u,'title_original='+encodeURIComponent(params.movie.original_title))
-        }
-
         u = Utils.addUrlComponent(u,'year='+encodeURIComponent(((params.movie.release_date || params.movie.first_air_date || '0000') + '').slice(0,4)))
         u = Utils.addUrlComponent(u,'is_serial='+(params.movie.original_name ? '2' : params.other ? '0' : '1'))
         u = Utils.addUrlComponent(u,'genres='+encodeURIComponent(genres.join(',')))
